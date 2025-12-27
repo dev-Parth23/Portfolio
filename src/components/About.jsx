@@ -5,12 +5,12 @@ function About() {
   return (
     <div id="about" className="relative w-full min-h-screen bg-[#1E1E1E] text-white overflow-hidden">
       {/* INTRO */}
-      <section className="px-6 sm:px-10 md:px-16 pt-6 max-w-[900px]">
-        <h1 className="text-[40px] sm:text-[48px] md:text-[64px] font-normal mb-6 md:mb-10">
+      <section className="px-6 sm:px-10 md:px-16 pt-20 max-w-[900px]">
+        <h2 className="text-[40px] sm:text-[48px] md:text-[64px] font-normal mb-6 md:mb-10">
           About Me
-        </h1>
+        </h2>
 
-        <p className="text-gray-300 font-normal text-base sm:text-lg md:text-xl leading-relaxed">
+        <p className="text-gray-300 font-normal text-base leading-relaxed">
           I'm a full-stack developer who enjoys building meaningful products at
           the intersection of AI, SaaS, and interactive experiences.
         </p>

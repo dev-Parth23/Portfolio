@@ -1,6 +1,7 @@
 import React from "react";
 import { GoArrowDown } from "react-icons/go";
-import { FaLinkedin, FaWhatsapp, FaGithub } from "react-icons/fa6";
+import { FaLinkedin, FaWhatsapp, FaGithub, FaDownload  } from "react-icons/fa6";
+import { FaFileDownload } from 'react-icons/fa'; // Use a download icon instead
 
 function Work() {
   return (
@@ -27,7 +28,7 @@ function Work() {
       {/* Text Overlay */}
       <div className="relative z-10 flex h-full items-center justify-center text-center px-4">
         <div>
-          <h2 className="mb-4 text-sm sm:text-xl tracking-wide text-zinc-600">
+          <h2 className="mb-4 text-2xl sm:text-3xl tracking-wide text-zinc-600">
             Hi! I’m Parth
           </h2>
 
@@ -41,21 +42,32 @@ function Work() {
       {/* SOCIAL LINKS */}
       <div
         className="
-          absolute
-          bottom-24
-          left-1/5
-          -translate-x-1/2
-          sm:left-10
-          sm:translate-x-0
-          z-20
-          flex
-          flex-row sm:flex-col
-          gap-6
-          items-center
-          text-2xl
-          text-black
+  absolute
+    bottom-20
+    left-1/2
+    -translate-x-1/2
+    sm:left-8
+    sm:translate-x-0
+    z-20
+    flex
+    flex-row sm:flex-col
+    gap-6
+    items-center
+    text-2xl
+    text-black
         "
       >
+       
+
+<a 
+  href="/src/assets/RESUME_ParthSinghal.pdf" 
+  download="Parth_Singhal_Resume.pdf" 
+
+>
+   <FaDownload  /> 
+</a>
+
+      
         <a
           href="https://www.linkedin.com/in/dev-parth23/"
           target="_blank"
