@@ -11,7 +11,7 @@ function Product({ val, index, mover }) {
         onMouseEnter={() => mover(index)}
         className="w-full mx-auto flex items-center justify-between"
       >
-        <h1 className="w-1/5 text-4xl pl-20 font-semibold capitalize">
+        <h1 className="w-1/5 text-4xl pl-20 font-semibold capitalize ">
           {title}
         </h1>
 

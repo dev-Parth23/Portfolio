@@ -12,7 +12,7 @@ function Journey() {
       companyLink: "https://www.fusionhawk.io/",
       role: "Software Engineer",
       description:
-        "Building and maintaining Techivation's full web and SaaS ecosystem powering audio plugin licensing and management.",
+        "Architecting full-stack SaaS automations and CRM ecosystems using Node.js and React to drive enterprise-level productivity.",
       period: "Oct 2025 – Present",
     },
     {
@@ -20,7 +20,7 @@ function Journey() {
       companyLink: "https://crm-masters.com/",
       role: "Software Developer",
       description:
-        "Developing high-performance user interfaces and integrating real-time data visualizations.",
+        "Building high-performance user interfaces and real-time data visualizations to deliver actionable business insights.",
       period: "Apr 2025 – Oct 2025",
     },
     {
@@ -28,7 +28,7 @@ function Journey() {
       companyLink: "https://www.softkingo.com/",
       role: "React.js Developer Intern",
       description:
-        "Developing high-performance user interfaces and integrating real-time data visualizations.",
+        "Developing responsive, high-conversion web interfaces that increased user engagement and sales by 200%.",
       period: "Jul 2024 – Oct 2024",
     },
   ];
