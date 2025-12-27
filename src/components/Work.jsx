@@ -1,90 +1,111 @@
-import React, { useState } from "react";
-import { useScroll } from "framer-motion";
+import React from "react";
+import { GoArrowDown } from "react-icons/go";
+import { FaLinkedin, FaWhatsapp, FaGithub } from "react-icons/fa6";
 
 function Work() {
-  const [images, setImages] = useState([
-    {
-      url: "https://external-preview.redd.it/java-22-launch-event-v0-VKfyXB99AEiHiPvIbK-vLRHcejGsT7-_XARIBlJwh38.jpg?auto=webp&s=0839fef377ec7e8428306c5b174bbab8ed470b4a",
-      top: "6%",
-      left: "46%",
-      isActive: false,
-    },
-    {
-      url: "https://www.docker.com/wp-content/uploads/2023/08/logo-guide-logos-2.svg",
-      top: "7.5%",
-      left: "54%",
-      isActive: false,
-    },
-    {
-      url: "https://spin.atomicobject.com/wp-content/uploads/Figma-Image.jpg",
-      top: "6.5%",
-      left: "48%",
-      isActive: false,
-    },
-    {
-      url: "https://ml2quantum.com/wp-content/uploads/2020/05/Microsoft-Power-BI-Symbol.png",
-      top: "8%",
-      left: "43%",
-      isActive: false,
-    },
-    {
-      url: "https://images.prismic.io/toyfight/65e1e07d27237c2bb829b9dc_GSAP-Meta-image.jpg?auto=format%2Ccompress&rect=0%2C0%2C2400%2C1260&w=2400&h=1260",
-      top: "9%",
-      left: "45%",
-      isActive: false,
-    },
-    {
-      url: "https://www.patterns.dev/img/reactjs/react-logo@3x.svg",
-      top: "8.5%",
-      left: "54%",
-      isActive: false,
-    },
-  ]);
-
-  const { scrollYProgress } = useScroll();
-
-  scrollYProgress.on("change", (data) => {
-    function imagesShow(arr) {
-      setImages((prev) =>
-        prev.map((item, index) =>
-          arr.indexOf(index) === -1
-            ? { ...item, isActive: false }
-            : { ...item, isActive: true }
-        )
-      );
-    }
-    const scrollIndex = Math.floor(data * 100); // Use 6 for better optimization
-    const activeImageIndexes = Array.from(
-      { length: scrollIndex + 1 },
-      (_, i) => i
-    );
-
-    imagesShow(activeImageIndexes);
-  });
-
   return (
-    <div className="w-full h-[80vh]">
-      <div className="relative text-center pt-52 max-w-screen-xl mx-auto">
-        <h1 className="text-[14vw] leading-none font-medium  tracking-tight">
-          Hello World!!!
-        </h1>
-      
+    <section
+      id="home"
+      className="relative h-screen w-full select-none overflow-hidden"
+    >
+      {/* Blob / Video */}
+      <div className="absolute inset-0 flex items-center justify-center">
+        <video
+          className="
+            w-[110vw] sm:w-[1200px] lg:w-[1600px]
+    max-w-none
+    object-contain
+          "
+          autoPlay
+          loop
+          muted
+          playsInline
+          src="/src/assets/Home page Elem.mp4"
+        />
       </div>
-      <div className="top-0 w-full h-full absolute">
-        {images.map(
-          (elem, index) =>
-            elem.isActive && (
-              <img
-                key={index}
-                className="absolute -translate-x-1/2 -translate-y-1/2 w-52 h-52 object-cover rounded-lg"
-                src={elem.url}
-                style={{ top: elem.top, left: elem.left }}
-                alt=""
-              />
-            )
-        )}
+
+      {/* Text Overlay */}
+      <div className="relative z-10 flex h-full items-center justify-center text-center px-4">
+        <div>
+          <h2 className="mb-4 text-sm sm:text-xl tracking-wide text-zinc-600">
+            Hi! I’m Parth
+          </h2>
+
+          <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-8xl font-normal leading-tight text-black">
+            Full-stack Developer <br />
+            UI & UX Designer.
+          </h1>
+        </div>
       </div>
-    </div>
+
+      {/* SOCIAL LINKS */}
+      <div
+        className="
+          absolute
+          bottom-24
+          left-1/5
+          -translate-x-1/2
+          sm:left-10
+          sm:translate-x-0
+          z-20
+          flex
+          flex-row sm:flex-col
+          gap-6
+          items-center
+          text-2xl
+          text-black
+        "
+      >
+        <a
+          href="https://www.linkedin.com/in/dev-parth23/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="transition-transform hover:scale-110"
+        >
+          <FaLinkedin />
+        </a>
+
+        <a
+          href="https://wa.me/919368353165"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="transition-transform hover:scale-110"
+        >
+          <FaWhatsapp />
+        </a>
+
+        <a
+          href="https://github.com/dev-Parth23"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="transition-transform hover:scale-110"
+        >
+          <FaGithub />
+        </a>
+      </div>
+
+      {/* SCROLL INDICATOR */}
+      <div
+        className="
+          absolute
+          bottom-10 sm:bottom-20
+          right-1/2 sm:right-10
+          translate-x-1/2 sm:translate-x-0
+          flex
+          flex-col sm:flex-row
+          items-center
+          gap-3
+        "
+      >
+        <span className="bg-black text-white rounded-full p-3 animate-bounce">
+          <GoArrowDown />
+        </span>
+
+        <span className="hidden sm:block text-black font-medium tracking-wide">
+          Scroll to Explore
+        </span>
+      </div>
+    </section>
   );
 }
 

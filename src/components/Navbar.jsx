@@ -1,27 +1,70 @@
-import React from "react";
+import React, { useState } from "react";
 import Button from "./Button";
 
 function Navbar() {
+  const [open, setOpen] = useState(false);
+
   return (
-    <div className="fixed px-20 w-full mx-auto py-6 border-b-[1px] select-none border-zinc-700 flex align-middle justify-between items-center">
-      <h1>Hi, I am Parth</h1>
-      <div className="Links flex gap-14 ml-20">
-        {["Home", "Projects", "Skills", "", "About"].map((elem, index) => (
-          <a key={index} className="font-normal text-sm" href="#">
-            {index === 3 && (
-              <span
-                key={index}
-                className="mr-2 inline-block h-5 w-0.5 bg-zinc-400"
-              ></span>
-            )}
-            {elem}
-          </a>
-        ))}
+    <nav className="fixed top-0 left-0 z-50 w-full select-none bg-transparent">
+      <div className="mx-auto flex items-center justify-between px-4 sm:px-8 lg:px-20 py-5">
+
+        {/* LOGO */}
+        <div className="flex items-center gap-3">
+          <a href={`#home`} className="hover:opacity-60" onClick={() => setOpen(false)}>
+          <span className="text-2xl sm:text-3xl lg:text-4xl font-semibold tracking-tight">
+            PS
+          </span>
+              </a>
+        </div>
+
+        {/* DESKTOP MENU */}
+        <div className="hidden md:flex items-center gap-10 text-lg text-zinc-800">
+          {["About", "Experience", "Projects", "Skills", "Education" ].map((item, index) => (
+            <a
+              key={index}
+              href={`#${item.toLowerCase()}`}
+              className="transition-opacity hover:opacity-60"
+            >
+              {item}
+            </a>
+          ))}
+
+          <Button title="Contact" />
+        </div>
+
+        {/* MOBILE MENU BUTTON */}
+        <button
+          onClick={() => setOpen(!open)}
+          className="md:hidden flex flex-col gap-1.5"
+          aria-label="Toggle menu"
+        >
+          <span className="w-6 h-[2px] bg-zinc-800" />
+          <span className="w-6 h-[2px] bg-zinc-800" />
+          <span className="w-6 h-[2px] bg-zinc-800" />
+        </button>
       </div>
-      <Button title="Contact Us" />
-    </div>
+
+      {/* MOBILE MENU DROPDOWN */}
+      {open && (
+        <div className="md:hidden bg-[#ECECEC]/95 backdrop-blur-sm border-t border-zinc-300">
+          <div className="flex flex-col items-center gap-6 py-8 text-lg text-zinc-800">
+            {["About", "Experience", "Projects", "Skills", "Education"].map((item, index) => (
+              <a
+                key={index}
+                href={`#${item.toLowerCase()}`}
+                className="hover:opacity-60"
+                onClick={() => setOpen(false)}
+              >
+                {item}
+              </a>
+            ))}
+
+            <Button title="Contact" />
+          </div>
+        </div>
+      )}
+    </nav>
   );
 }
 
 export default Navbar;
-

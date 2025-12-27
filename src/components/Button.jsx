@@ -1,15 +1,29 @@
 import React from "react";
-import { IoIosReturnRight } from "react-icons/io";
+import { GoArrowUpRight } from "react-icons/go";
 
-function Button({ ButtonTitle = "Contact Us", onClcik }) {
+const Button = ({ title = "Contact" }) => {
   return (
-    <div className="">
-      <button className="min-w-40 px-4 py-2 items-center align-middle justify-between bg-zinc-100 flex text-black rounded-full">
-        <span className="text-sm font-medium">{ButtonTitle}</span>
-        <IoIosReturnRight />
-      </button>
-    </div>
+    <a href="#contact" className=" group flex items-center ">
+      <span className="flex items-center px-5 py-2 bg-black text-white rounded-full text-base font-medium transition-all duration-300 ease-out group-hover:bg-zinc-900 " >
+        {title}
+      </span>
+
+   
+      <span
+        className="
+          flex items-center justify-center
+          h-10 w-10
+          bg-black text-white
+          rounded-full
+          transition-all duration-300 ease-out
+          group-hover:bg-zinc-900
+          group-hover:translate-x-1
+        "
+      >
+        <GoArrowUpRight className="text-lg" />
+      </span>
+    </a>
   );
-}
+};
 
 export default Button;
