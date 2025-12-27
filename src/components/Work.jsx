@@ -13,7 +13,7 @@ function Work() {
       <div className="absolute inset-0 flex items-center justify-center">
         <video
           className="
-            w-[110vw] sm:w-[1200px] lg:w-[1600px]
+            w-[100vw] sm:w-[1200px] lg:w-[1600px]
     max-w-none
     object-contain
           "

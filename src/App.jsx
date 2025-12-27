@@ -1,28 +1,26 @@
 import React from "react";
+import LocomotiveScroll from "locomotive-scroll";
 import Navbar from "./components/Navbar";
 import Work from "./components/Work";
 import Stripes from "./components/Stripes";
 import About from "./components/About";
 import Projects from "./components/Projects";
 import Journey from "./components/Journey";
-import Service from "./components/Service";
-// import Marquees from "./components/Marquees";
-// import Footer from "./components/Footer";
-import LocomotiveScroll from "locomotive-scroll";
+import Skills from "./components/Skills";
+import Education from "./components/Education";
 
 function App() {
   const locomotiveScroll = new LocomotiveScroll();
   return (
-    <div className="overflow-x-hidden w-full bg-[#e7e7e7] text-black scale-100">
+    <div className="overflow-x-hidden w-full bg-[#e7e7e7] text-black scale-100 select-none">
       <Navbar />
       <Work />
       <Stripes />
       <About />
       <Projects />
       <Journey />
-      {/* <Service /> */}
-      {/* <Marquees /> */}
-      {/* <Footer /> */}
+      <Skills />
+      <Education />
     </div>
   );
 }
