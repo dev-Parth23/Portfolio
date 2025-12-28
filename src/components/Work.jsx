@@ -19,7 +19,7 @@ function Work() {
           loop
           muted
           playsInline
-          src="/src/assets/Home page Elem.mp4"
+          src="/HomepageElem.mp4"
         />
       </div>
 
