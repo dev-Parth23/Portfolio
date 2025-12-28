@@ -11,9 +11,7 @@ function Stripe({ val }) {
         flex
         justify-center
         py-6
-        border-t border-b
-        border-r
-        border-zinc-600
+
       "
     >
       <a href={val.ID} target="_blank" rel="noopener noreferrer">

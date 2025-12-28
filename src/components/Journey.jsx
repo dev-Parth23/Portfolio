@@ -147,10 +147,10 @@ function ExperienceCard({ exp, align }) {
           {exp.company}
         </h3>
       </a>
-      <p className="text-xl md:text-2xl text-zinc-200 mb-2 text-lime-400 transition-colors">
+      <p className="text-xl md:text-2xl mb-2 text-lime-400 transition-colors">
         {exp.role}
       </p>
-      <p className="text-white max-w-sm leading-relaxed mb-4 text-sm md:text-base hover:text-lime-400 transition-colors">
+      <p className="text-white max-w-sm leading-relaxed mb-4 text-sm md:text-base">
         {exp.description}
       </p>
       <span className="text-xs md:text-sm text-white font-mono bg-zinc-800/50 px-2 py-1 rounded hover:text-lime-400 transition-colors">

@@ -1,4 +1,5 @@
 import React from "react";
+
 const skills = [
   {
     title: "Languages",
@@ -53,17 +54,19 @@ const SkillPill = ({ name }) => (
   <span
     className="
       inline-flex items-center
-      px-4 py-2
+      px-3 sm:px-4
+      py-1.5 sm:py-2
       rounded-full
       bg-white
-      text-sm
+      text-xs sm:text-sm
       text-gray-700
       border border-black/5
       shadow-sm
       hover:bg-black
       hover:text-white
-      transition-colors
+      transition-all
       duration-200
+      whitespace-nowrap
     "
   >
     {name}
@@ -72,13 +75,13 @@ const SkillPill = ({ name }) => (
 
 const SkillCategory = ({ title, items }) => (
   <div className="space-y-5">
-    <h3 className="text-2xl font-semibold text-center text-gray-900">
+    <h3 className="text-xl sm:text-2xl font-semibold text-center text-gray-900">
       {title}
     </h3>
 
-    <div className="flex flex-wrap justify-center gap-3 text-lg">
-      {items.map((item, i) => (
-        <SkillPill key={i} name={item.name} />
+    <div className="flex flex-wrap justify-center gap-3">
+      {items.map((item, index) => (
+        <SkillPill key={index} name={item.name} />
       ))}
     </div>
   </div>
@@ -89,26 +92,49 @@ const Skills = () => {
     <section
       id="skills"
       data-scroll-section
-      className="bg-[#E6E6E6] h-[75vh] pt-16 pb-28"
+      className="
+        bg-[#E6E6E6]
+        py-20
+        px-4 sm:px-6 lg:px-12
+      "
     >
-      <div className="max-w-[1300px] mx-auto flex flex-col h-full gap-10">
-        <div className="text-center mb-16 space-y-1">
-          <h2 className="text-[40px] sm:text-[48px] md:text-[64px] font-normal  md:mb-5">
+      <div className="max-w-[1300px] mx-auto flex flex-col gap-14">
+        {/* Heading */}
+        <div className="text-center space-y-3">
+          <h2
+            className="
+              text-3xl
+              sm:text-4xl
+              md:text-5xl
+              lg:text-[64px]
+              font-normal
+            "
+          >
             Technology Arsenal
           </h2>
-          <p className="text-zinc-700 font-normal text-base sm:text-lg md:text-xl leading-relaxed">
+
+          <p
+            className="
+              text-zinc-700
+              text-sm
+              sm:text-base
+              md:text-lg
+              max-w-3xl
+              mx-auto
+            "
+          >
             A comprehensive toolkit for building modern, scalable applications
           </p>
         </div>
+
         <div
           className="
             grid
             grid-cols-1
-            md:grid-cols-2
+            sm:grid-cols-2
             lg:grid-cols-3
-            gap-x-20
+            gap-x-10
             gap-y-12
-            
           "
         >
           {skills.map((group, index) => (

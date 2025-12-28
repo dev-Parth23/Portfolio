@@ -33,7 +33,7 @@ function About() {
             SOFTWARE DEVELOPER & UI/UX DESIGNER
           </h2>
 
-          <div className="hidden md:block mt-24 -translate-y-1/2 w-16 h-16 bg-lime-400 rounded-full blur-sm" />
+          <div className="hidden md:block mt-20 -translate-y-1/2 w-16 h-16 bg-lime-400 rounded-full blur-sm" />
 
           <h2 className="text-[40px] sm:text-[60px] md:text-[96px] font-medium px-6 sm:px-12 md:px-16">
             SOFTWARE DEVELOPER & UI/UX DESIGNER

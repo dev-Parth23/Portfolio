@@ -9,6 +9,7 @@ const Contact = () => {
     const formData = {
       name: e.target.name.value,
       email: e.target.email.value,
+      phone: e.target.phone.value,
       message: e.target.message.value,
     };
 
@@ -97,7 +98,7 @@ const Contact = () => {
           <div className="bg-[#1F1F1F] border border-white/10 rounded-2xl p-8 lg:p-10">
             <form className="space-y-6" autoComplete="off">
               <div>
-                <label className="text-sm text-white/60">Your Name</label>
+                <label className="text-sm text-white">Your Name</label>
                 <input
                   type="text"
                   placeholder="Enter your name"
@@ -117,7 +118,7 @@ const Contact = () => {
               </div>
 
               <div>
-                <label className="text-sm text-white/60">Email Address</label>
+                <label className="text-sm text-white">Email Address</label>
                 <input
                   type="email"
                   placeholder="you@example.com"
@@ -135,9 +136,28 @@ const Contact = () => {
                   "
                 />
               </div>
+              <div>
+                <label className="text-sm text-white">Phone Numer</label>
+                <input
+                  type="tel"
+                  placeholder="+91 12345 67890"
+                  className="
+                    mt-2
+                    w-full
+                    bg-transparent
+                    border-b
+                    border-white/20
+                    py-2
+                    text-white
+                    outline-none
+                    focus:border-lime-400
+                    transition
+                  "
+                />
+              </div>
 
               <div>
-                <label className="text-sm text-white/60">Message</label>
+                <label className="text-sm text-white">Message</label>
                 <textarea
                   rows="4"
                   placeholder="Tell me about your idea..."

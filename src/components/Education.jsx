@@ -77,27 +77,8 @@ const Education = () => {
     <section
       id="education"
       data-scroll-section
-      className="bg-[#181818] relative"
+      className="bg-[#181818] relative text-white"
     >
-      <div className="hidden lg:block absolute left-0 top-[65%] h-full w-28 z-50">
-        <div
-          className="
-            sticky
-            top-1/2
-            -translate-y-1/2
-            rotate-[-90deg]
-            text-white/70
-            tracking-[0.4em]
-            text-7xl
-            font-semibold
-            whitespace-nowrap
-            pointer-events-none
-          "
-        >
-          EDUCATION
-        </div>
-      </div>
-
       <div ref={containerRef} className="relative">
         <div
           className="
@@ -128,19 +109,21 @@ const Education = () => {
                 -translate-y-1/2
                 text-[26rem]
                 font-extrabold
-                text-white/5
+                lg:text-white/5
                 select-none
                 leading-none
               "
             >
               {item.bgYear}
-            </div>{" "}
+            </div>
+
             <div
               className="
                 relative
                 max-w-7xl
                 mx-auto
-                pl-28 pr-6
+                pl-20
+                pr-6
                 lg:px-10
                 py-24
                 lg:py-32
@@ -174,7 +157,7 @@ const Education = () => {
                     </p>
                   )}
 
-                  <p className="text-white/60 text-sm lg:text-base">
+                  <p className="text-white/85 text-sm lg:text-base">
                     {item.location}
                   </p>
                 </div>
@@ -187,11 +170,11 @@ const Education = () => {
                   {item.education}
                 </h2>
 
-                <p className="text-white/70 leading-relaxed text-sm lg:text-base">
+                <p className="text-white/90 leading-relaxed text-sm lg:text-base">
                   {item.description}
                 </p>
 
-                <ul className="list-disc list-inside pt-3 space-y-1 text-white/60 text-sm lg:text-base">
+                <ul className="list-disc list-inside pt-3 space-y-1 text-white/80 text-sm lg:text-base">
                   {item.meta.map((m, i) => (
                     <li key={i} className="hover:text-lime-400 transition">
                       {m}
@@ -199,22 +182,28 @@ const Education = () => {
                   ))}
                 </ul>
               </div>
-              <div className="relative flex justify-center">
+
+              <div
+                className="
+                  absolute
+                  left-6
+                  lg:left-1/2
+                  -translate-x-1/2
+                  top-1/2
+                  -translate-y-1/2
+                  z-20
+                "
+              >
                 <span
                   className="
-                    absolute
-                    top-8
                     w-4
                     h-4
+                    block
                     rounded-full
                     bg-[#181818]
                     border-2
                     border-lime-400
                     shadow-[0_0_10px_#C7F000]
-                    z-10
-                    -translate-x-1/2
-                    left-0
-                    lg:left-1/2
                   "
                 >
                   <span className="absolute inset-1 rounded-full bg-lime-400" />

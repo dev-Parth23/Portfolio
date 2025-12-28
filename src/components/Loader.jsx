@@ -6,10 +6,6 @@ export default function Loader({ onComplete }) {
 
   useEffect(() => {
     const bricks = Array.from(loaderRef.current.children);
-
-    // const oddBricks = bricks.filter((_, i) => i % 2 === 0);  
-    // const evenBricks = bricks.filter((_, i) => i % 2 !== 0); 
-
     const tl = gsap.timeline({
       onComplete,
     });
@@ -19,13 +15,7 @@ export default function Loader({ onComplete }) {
       duration: 2.5,
       ease: "power4.inOut",
       stagger: 0.06,
-    })
-    // .to(evenBricks, {
-    //   yPercent: 100,
-    //   duration: 2.5,
-    //   ease: "power4.inOut",
-    //   stagger: 0.06,
-    // }, 0);
+    });
   }, [onComplete]);
 
   return (
@@ -33,10 +23,10 @@ export default function Loader({ onComplete }) {
       ref={loaderRef}
       className="fixed inset-0 z-[9999] flex overflow-hidden"
     >
-      {[...Array(12)].map((_, i) => (
+      {[...Array(6)].map((_, i) => (
         <div
           key={i}
-          className="w-1/12 h-screen bg-[#181818]"
+          className="w-1/6 h-screen bg-[#181818] border-2 border-white"
         />
       ))}
     </div>
