@@ -5,7 +5,6 @@ function Product({ val, index, mover }) {
   const { title, description, live, color } = val;
 
   return (
-    
     <div className={`w-full h-[23rem] py-20 pr-6 text-white ${color}`}>
       <div
         onMouseEnter={() => mover(index)}
@@ -21,8 +20,6 @@ function Product({ val, index, mover }) {
         </div>
       </div>
     </div>
-      
   );
 }
-
 export default Product;

@@ -13,7 +13,11 @@ function Projects() {
   }, [showProjects]);
 
   return (
-    <div id="projects"  data-scroll-section className="relative w-full bg-[#E6E6E6] text-black">
+    <div
+      id="projects"
+      data-scroll-section
+      className="relative w-full bg-[#E6E6E6] text-black"
+    >
       <div className=" top-0  w-full z-50">
         <div className="max-w-7xl mx-auto px-10 py-8 text-center">
           <h2 className="text-[40px] sm:text-[48px] md:text-[64px] font-normal mb-6 md:mb-10">
@@ -46,7 +50,7 @@ function Projects() {
             >
               <FaChevronDown />
             </motion.button>
-             <span className="w-80 h-[2px] bg-gray-600" />
+            <span className="w-80 h-[2px] bg-gray-600" />
           </div>
         </div>
       </div>

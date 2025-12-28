@@ -23,10 +23,8 @@ function App() {
       smartphone: { smooth: true },
     });
 
-    // expose globally for navbar buttons
     window.locoScroll = scroll;
 
-    // keep in sync
     setTimeout(() => scroll.update(), 500);
 
     return () => {

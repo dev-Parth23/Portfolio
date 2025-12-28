@@ -1,6 +1,6 @@
 import React from "react";
 import { GoArrowDown } from "react-icons/go";
-import { FaLinkedin, FaWhatsapp, FaGithub, FaDownload  } from "react-icons/fa6";
+import { FaLinkedin, FaWhatsapp, FaGithub, FaDownload } from "react-icons/fa6";
 
 function Work() {
   return (
@@ -8,7 +8,6 @@ function Work() {
       id="home"
       className="relative h-screen w-full select-none overflow-hidden"
     >
-      {/* Blob / Video */}
       <div className="absolute inset-0 flex items-center justify-center">
         <video
           className="
@@ -24,7 +23,6 @@ function Work() {
         />
       </div>
 
-      {/* Text Overlay */}
       <div className="relative z-10 flex h-full items-center justify-center text-center px-4">
         <div>
           <h2 className="mb-4 text-2xl sm:text-3xl tracking-wide text-zinc-600">
@@ -38,7 +36,6 @@ function Work() {
         </div>
       </div>
 
-      {/* SOCIAL LINKS */}
       <div
         className="
   absolute
@@ -56,17 +53,13 @@ function Work() {
     text-black
         "
       >
-       
+        <a
+          href="/src/assets/RESUME_ParthSinghal.pdf"
+          download="Parth_Singhal_Resume.pdf"
+        >
+          <FaDownload />
+        </a>
 
-<a 
-  href="/src/assets/RESUME_ParthSinghal.pdf" 
-  download="Parth_Singhal_Resume.pdf" 
-
->
-   <FaDownload  /> 
-</a>
-
-      
         <a
           href="https://www.linkedin.com/in/dev-parth23/"
           target="_blank"
@@ -95,7 +88,6 @@ function Work() {
         </a>
       </div>
 
-      {/* SCROLL INDICATOR */}
       <div
         className="
           absolute

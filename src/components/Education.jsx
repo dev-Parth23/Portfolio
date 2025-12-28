@@ -74,9 +74,11 @@ const Education = () => {
   }, []);
 
   return (
-    <section id="education" data-scroll-section className="bg-[#181818] relative">
-      
-      {/* STICKY SECTION LABEL */}
+    <section
+      id="education"
+      data-scroll-section
+      className="bg-[#181818] relative"
+    >
       <div className="hidden lg:block absolute left-0 top-[65%] h-full w-28 z-50">
         <div
           className="
@@ -97,8 +99,6 @@ const Education = () => {
       </div>
 
       <div ref={containerRef} className="relative">
-
-        {/* VERTICAL TIMELINE */}
         <div
           className="
             absolute
@@ -119,8 +119,6 @@ const Education = () => {
 
         {education.map((item, idx) => (
           <div key={idx} className="relative">
-
-            {/* BIG FADED YEAR */}
             <div
               className="
                 hidden lg:block
@@ -136,9 +134,7 @@ const Education = () => {
               "
             >
               {item.bgYear}
-            </div>
-
-            {/* CONTENT */}
+            </div>{" "}
             <div
               className="
                 relative
@@ -154,9 +150,7 @@ const Education = () => {
                 gap-10
               "
             >
-              {/* LEFT CONTENT */}
               <div className="space-y-6 text-white lg:pr-12">
-
                 <div className="space-y-1">
                   <a
                     href={item.orgPage}
@@ -205,8 +199,6 @@ const Education = () => {
                   ))}
                 </ul>
               </div>
-
-              {/* TIMELINE DOT */}
               <div className="relative flex justify-center">
                 <span
                   className="
@@ -229,7 +221,6 @@ const Education = () => {
                 </span>
               </div>
 
-              {/* RIGHT SPACER */}
               <div className="hidden lg:block" />
             </div>
           </div>

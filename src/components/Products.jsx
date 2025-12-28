@@ -37,29 +37,27 @@ function Products() {
     },
     {
       title: "Store Sales Dashboard",
-      description:
- "-------------------> TO BE DECIDED <-------------------",      live: true,
+      description: "-------------------> TO BE DECIDED <-------------------",
+      live: true,
       color: "hover:bg-violet-800",
     },
     {
       title: "Covid Death Dashboard",
-      description:
- "-------------------> TO BE DECIDED <-------------------",
-       live: true,
+      description: "-------------------> TO BE DECIDED <-------------------",
+      live: true,
       color: "hover:bg-red-700",
     },
     {
       title: "Go Stock",
-      description:
-         "-------------------> TO BE DECIDED <-------------------",
+      description: "-------------------> TO BE DECIDED <-------------------",
       live: true,
       color: "hover:bg-green-800",
     },
-   
+
     {
       title: "Aistear Unica UI Design",
-      description:
- "-------------------> TO BE DECIDED <-------------------",      live: true,
+      description: "-------------------> TO BE DECIDED <-------------------",
+      live: true,
       color: "hover:bg-pink-500",
     },
   ];
@@ -68,12 +66,10 @@ function Products() {
 
   return (
     <div className="relative">
-      {/* PRODUCTS LIST */}
       {products.map((item, index) => (
         <Product key={index} val={item} index={index} mover={setActiveIndex} />
       ))}
 
-      {/* VIDEO FOLLOWER */}
       <div className="pointer-events-none absolute top-0 right-[50%] h-full">
         <motion.div
           animate={{ y: `${activeIndex * 23}rem` }}
@@ -101,5 +97,4 @@ function Products() {
     </div>
   );
 }
-
 export default Products;

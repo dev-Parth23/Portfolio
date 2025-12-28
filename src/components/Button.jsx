@@ -1,28 +1,23 @@
 import React from "react";
 import { GoArrowUpRight } from "react-icons/go";
 
-const Button = ({
-  title = "Contact",
-  href = "#contact",
-}) => {
+const Button = ({ title = "Contact", href = "#contact" }) => {
   const handleClick = (e) => {
-    // prevent default browser jump and use locomotive scroll if available
     e.preventDefault();
-    const id = href.replace('#', '');
+    const id = href.replace("#", "");
     const el = document.getElementById(id);
     const isLast = el && !el.nextElementSibling;
     const offset = isLast ? 0 : -80;
 
-    if (window.locoScroll && typeof window.locoScroll.scrollTo === 'function') {
+    if (window.locoScroll && typeof window.locoScroll.scrollTo === "function") {
       window.locoScroll.scrollTo(href, { offset });
     } else {
-      el?.scrollIntoView({ behavior: 'smooth' });
+      el?.scrollIntoView({ behavior: "smooth" });
     }
   };
 
   return (
     <a href={href} onClick={handleClick} className="group flex items-center">
-      
       <span
         className="
           flex items-center px-5 py-2
@@ -49,7 +44,6 @@ const Button = ({
       >
         <GoArrowUpRight className="text-lg" />
       </span>
-
     </a>
   );
 };

@@ -55,7 +55,8 @@ function Journey() {
 
   return (
     <section
-      id="journey"  data-scroll-section
+      id="journey"
+      data-scroll-section
       className="flex flex-col min-h-screen relative w-full bg-[#181818] text-white overflow-hidden px-6 md:px-20 pt-20"
     >
       <h2 className="text-[40px] sm:text-[48px] md:text-[64px] font-normal mb-6 md:mb-10 text-right">
@@ -88,7 +89,7 @@ function Journey() {
 
               <div className="absolute left-4 md:left-1/2 -translate-x-1/2 z-20">
                 <div className="w-3 h-3 md:w-4 md:h-4" />
-                 <span
+                <span
                   className="
                   absolute
                   top-[-30%]
@@ -122,7 +123,6 @@ function Journey() {
   );
 }
 
-// Sub-component for the card to keep the main map clean
 function ExperienceCard({ exp, align }) {
   const isRight = align === "right";
   return (
@@ -147,7 +147,9 @@ function ExperienceCard({ exp, align }) {
           {exp.company}
         </h3>
       </a>
-      <p className="text-xl md:text-2xl text-zinc-200 mb-2 text-lime-400 transition-colors">{exp.role}</p>
+      <p className="text-xl md:text-2xl text-zinc-200 mb-2 text-lime-400 transition-colors">
+        {exp.role}
+      </p>
       <p className="text-white max-w-sm leading-relaxed mb-4 text-sm md:text-base hover:text-lime-400 transition-colors">
         {exp.description}
       </p>

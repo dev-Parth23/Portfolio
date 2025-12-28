@@ -72,7 +72,9 @@ const SkillPill = ({ name }) => (
 
 const SkillCategory = ({ title, items }) => (
   <div className="space-y-5">
-    <h3 className="text-2xl font-semibold text-center text-gray-900">{title}</h3>
+    <h3 className="text-2xl font-semibold text-center text-gray-900">
+      {title}
+    </h3>
 
     <div className="flex flex-wrap justify-center gap-3 text-lg">
       {items.map((item, i) => (
@@ -84,7 +86,11 @@ const SkillCategory = ({ title, items }) => (
 
 const Skills = () => {
   return (
-    <section id="skills"  data-scroll-section className="bg-[#E6E6E6] h-[75vh] pt-16 pb-28">
+    <section
+      id="skills"
+      data-scroll-section
+      className="bg-[#E6E6E6] h-[75vh] pt-16 pb-28"
+    >
       <div className="max-w-[1300px] mx-auto flex flex-col h-full gap-10">
         <div className="text-center mb-16 space-y-1">
           <h2 className="text-[40px] sm:text-[48px] md:text-[64px] font-normal  md:mb-5">

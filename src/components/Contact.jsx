@@ -3,47 +3,38 @@ import { FaGithub, FaLinkedin, FaInstagram, FaWhatsapp } from "react-icons/fa";
 import { IoIosMail } from "react-icons/io";
 
 const Contact = () => {
-    const handleSubmit = async (e) => {
-  e.preventDefault();
+  const handleSubmit = async (e) => {
+    e.preventDefault();
 
-  const formData = {
-    name: e.target.name.value,
-    email: e.target.email.value,
-    message: e.target.message.value,
-  };
+    const formData = {
+      name: e.target.name.value,
+      email: e.target.email.value,
+      message: e.target.message.value,
+    };
 
-  try {
-    const res = await fetch(
-      "https://your-catalyst-endpoint/createLead",
-      {
+    try {
+      const res = await fetch("https://your-catalyst-endpoint/createLead", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
-      }
-    );
+      });
 
-    if (res.ok) {
-      alert("Thanks! I’ll get back to you soon 🚀");
-      e.target.reset();
+      if (res.ok) {
+        alert("Thanks! I’ll get back to you soon 🚀");
+        e.target.reset();
+      }
+    } catch (err) {
+      console.error(err);
+      alert("Something went wrong");
     }
-  } catch (err) {
-    console.error(err);
-    alert("Something went wrong");
-  }
-};
+  };
 
   return (
-    <section id="contact"
-  data-scroll-section
-  className="relative bg-[#181818]"
->
-
-<div className="relative">
-  <hr className="w-full h-[2px] bg-lime-400 shadow-[0_0_15px_#C7F000]" />
-</div>
-      {/* MAIN CONTENT */}
+    <section id="contact" data-scroll-section className="relative bg-[#181818]">
+      <div className="relative">
+        <hr className="w-full h-[2px] bg-lime-400 shadow-[0_0_15px_#C7F000]" />
+      </div>
       <div className="relative max-w-7xl mx-auto w-full pl-6 lg:pl-28 pr-6 lg:px-10 py-24 flex flex-col gap-20 ">
-        {/* SECTION HEADING */}
         <div className="flex flex-col mb-20">
           <h2 className="text-[40px] sm:text-[48px] md:text-[64px] font-normal text-center text-white mb-5">
             Let&apos;s Connect !
@@ -89,7 +80,6 @@ const Contact = () => {
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-20">
-          {/* LEFT TEXT */}
           <div className="space-y-6 text-white">
             <h1 className="text-4xl lg:text-6xl font-bold leading-tight">
               Let’s build
@@ -104,7 +94,6 @@ const Contact = () => {
             </p>
           </div>
 
-          {/* RIGHT FORM */}
           <div className="bg-[#1F1F1F] border border-white/10 rounded-2xl p-8 lg:p-10">
             <form className="space-y-6" autoComplete="off">
               <div>

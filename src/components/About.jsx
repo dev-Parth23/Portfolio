@@ -3,8 +3,11 @@ import React from "react";
 
 function About() {
   return (
-    <div id="about"  data-scroll-section className="relative w-full min-h-screen bg-[#181818] text-white overflow-hidden">
-      {/* INTRO */}
+    <div
+      id="about"
+      data-scroll-section
+      className="relative w-full min-h-screen bg-[#181818] text-white overflow-hidden"
+    >
       <section className="px-6 sm:px-10 md:px-16 pt-20 max-w-[900px]">
         <h2 className="text-[40px] sm:text-[48px] md:text-[64px] font-normal mb-6 md:mb-10">
           About Me
@@ -16,7 +19,6 @@ function About() {
         </p>
       </section>
 
-      {/* INFINITE MARQUEE */}
       <div className="w-full overflow-hidden py-10 sm:py-12">
         <motion.div
           className="flex w-max whitespace-nowrap items-center"
@@ -39,10 +41,8 @@ function About() {
         </motion.div>
       </div>
 
-      {/* CONTENT SECTION */}
       <section className="relative w-full overflow-hidden px-6 sm:px-10 md:px-16 pb-24">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-14 md:gap-28 items-start">
-          {/* TEXT */}
           <div className="max-w-[720px] flex flex-col pt-6 md:pt-20">
             <p className="text-sm sm:text-base md:text-[17px] leading-[1.85] text-gray-300 mb-8 md:mb-10">
               I'm a <b>Full-Stack Developer</b> focused on building performant,
@@ -53,8 +53,9 @@ function About() {
 
             <p className="text-sm sm:text-base md:text-[17px] leading-[1.85] text-gray-300 mb-8 md:mb-10">
               I specialize in developing interactive, animation-rich interfaces
-              using <b>React</b>, <b>GSAP</b>, <b>Framer Motion</b>, and <b>Three.js</b>, while architecting
-              reliable backend systems with <b>Node.js</b>, <b>Express</b>, <b>MongoDB</b>, and <b>SQL</b>
+              using <b>React</b>, <b>GSAP</b>, <b>Framer Motion</b>, and{" "}
+              <b>Three.js</b>, while architecting reliable backend systems with{" "}
+              <b>Node.js</b>, <b>Express</b>, <b>MongoDB</b>, and <b>SQL</b>
               databases. I’ve worked extensively on AI-enabled workflows and CRM
               automations.
             </p>
@@ -67,7 +68,6 @@ function About() {
             </p>
           </div>
 
-          {/* VIDEO */}
           <div className="relative w-full h-[240px] sm:h-[320px] md:h-[420px]">
             <video
               autoPlay
