@@ -6,6 +6,7 @@ export default function Loader({ onComplete }) {
 
   useEffect(() => {
     const bricks = Array.from(loaderRef.current.children);
+    const text = Array.from(loaderRef.current.children);
     const tl = gsap.timeline({
       onComplete,
     });
@@ -23,11 +24,14 @@ export default function Loader({ onComplete }) {
       ref={loaderRef}
       className="fixed inset-0 z-[9999] flex overflow-hidden"
     >
+      <div className="absolute inset-0 z-10 flex items-center justify-center">
+        <h1 className="text-white text-7xl font-medium tracking-widest">
+          HELLO !
+        </h1>
+      </div>
+
       {[...Array(6)].map((_, i) => (
-        <div
-          key={i}
-          className="w-1/6 h-screen bg-[#181818] border-2 border-white"
-        />
+        <div key={i} className="w-1/6 h-screen bg-[#181818] " />
       ))}
     </div>
   );
