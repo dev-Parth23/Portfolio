@@ -40,7 +40,7 @@ function Navbar() {
               <a
                 key={index}
                 href={`#${item.toLowerCase()}`}
-                className="transition-opacity hover:opacity-60"
+                className="transition-opacity hover:opacity-50"
                 onClick={(e) => handleNavClick(e, item.toLowerCase())}
               >
                 {item}

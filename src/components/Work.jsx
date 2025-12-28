@@ -54,8 +54,8 @@ function Work() {
         "
       >
         <a
-          href="/src/assets/RESUME_ParthSinghal.pdf"
-          download="Parth_Singhal_Resume.pdf"
+          href="/RESUME_ParthSinghal.pdf"
+          download="Parth_Singhal-Resume.pdf"
         >
           <FaDownload />
         </a>
