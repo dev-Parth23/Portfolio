@@ -11,6 +11,7 @@ import Journey from "./components/Journey";
 import Skills from "./components/Skills";
 import Education from "./components/Education";
 import Contact from "./components/Contact";
+import ChatbotLauncher from "./components/ChatbotLauncher";
 
 function App() {
   const scrollRef = useRef(null);
@@ -38,6 +39,8 @@ function App() {
     <>
       {loading && <Loader onComplete={() => setLoading(false)} />}
       <Navbar />
+
+<ChatbotLauncher />
 
       <div
         ref={scrollRef}
