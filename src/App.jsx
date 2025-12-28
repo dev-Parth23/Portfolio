@@ -28,8 +28,6 @@ function App() {
 
     window.locoScroll = locoScrollRef.current;
 
-    setTimeout(() => locoScrollRef.current.update(), 500);
-
     return () => {
       locoScrollRef.current?.destroy();
       window.locoScroll = null;
