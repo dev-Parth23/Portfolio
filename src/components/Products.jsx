@@ -87,7 +87,7 @@ function Products() {
                   muted
                   loop
                   className="w-full h-full object-cover"
-                  src={`/src/assets/${src}`}
+                  src={`/${src}`}
                 />
               </div>
             ))}
