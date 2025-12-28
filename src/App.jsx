@@ -1,6 +1,7 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import LocomotiveScroll from "locomotive-scroll";
 
+import Loader from "./components/Loader";
 import Navbar from "./components/Navbar";
 import Work from "./components/Work";
 import Stripes from "./components/Stripes";
@@ -13,9 +14,11 @@ import Contact from "./components/Contact";
 
 function App() {
   const scrollRef = useRef(null);
+  const locoScrollRef = useRef(null);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const scroll = new LocomotiveScroll({
+    locoScrollRef.current = new LocomotiveScroll({
       el: scrollRef.current,
       smooth: true,
       lerp: 0.08,
@@ -23,18 +26,19 @@ function App() {
       smartphone: { smooth: true },
     });
 
-    window.locoScroll = scroll;
+    window.locoScroll = locoScrollRef.current;
 
-    setTimeout(() => scroll.update(), 500);
+    setTimeout(() => locoScrollRef.current.update(), 500);
 
     return () => {
-      scroll.destroy();
+      locoScrollRef.current?.destroy();
       window.locoScroll = null;
     };
   }, []);
 
   return (
     <>
+      {loading && <Loader onComplete={() => setLoading(false)} />}
       <Navbar />
 
       <div
