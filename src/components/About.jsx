@@ -75,7 +75,7 @@ function About() {
               muted
               playsInline
               className="w-full h-full object-cover rounded-2xl"
-              src="src/assets/vid2.mp4"
+              src="/vid2.mp4"
             />
           </div>
         </div>
