@@ -4,11 +4,27 @@ import Button from "./Button";
 function Navbar() {
   const [open, setOpen] = useState(false);
 
+  const handleNavClick = (e, target) => {
+    e.preventDefault();
+    setOpen(false);
+
+    const el = document.querySelector(`#${target}`);
+    // If this is the last section, avoid negative offset to prevent blank space at bottom
+    const isLast = el && !el.nextElementSibling;
+    const offset = isLast ? 0 : -80; // adjust if navbar height changes
+
+    if (window.locoScroll && typeof window.locoScroll.scrollTo === 'function') {
+      window.locoScroll.scrollTo(`#${target}`, { offset });
+    } else {
+      el?.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <nav className="fixed top-0 left-0 z-50 w-full select-none bg-transparent">
       <div className="mx-auto flex items-center justify-between px-4 sm:px-8 lg:px-20 py-5">
         <div className="flex items-center gap-3">
-          <a href={`#home`} className="hover:opacity-60" onClick={() => setOpen(false)}>
+          <a href={`#home`} className="hover:opacity-60" onClick={(e) => handleNavClick(e, 'home')}>
           <span className="text-2xl sm:text-3xl lg:text-4xl font-semibold tracking-tight">
             PS
           </span>
@@ -21,6 +37,7 @@ function Navbar() {
               key={index}
               href={`#${item.toLowerCase()}`}
               className="transition-opacity hover:opacity-60"
+              onClick={(e) => handleNavClick(e, item.toLowerCase())}
             >
               {item}
             </a>
@@ -49,7 +66,7 @@ function Navbar() {
                 key={index}
                 href={`#${item.toLowerCase()}`}
                 className="hover:opacity-60"
-                onClick={() => setOpen(false)}
+                onClick={(e) => handleNavClick(e, item.toLowerCase())}
               >
                 {item}
               </a>

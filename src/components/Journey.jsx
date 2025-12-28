@@ -55,8 +55,8 @@ function Journey() {
 
   return (
     <section
-      id="journey"
-      className="flex flex-col min-h-screen relative w-full bg-[#1E1E1E] text-white overflow-hidden px-6 md:px-20 pt-20"
+      id="journey"  data-scroll-section
+      className="flex flex-col min-h-screen relative w-full bg-[#181818] text-white overflow-hidden px-6 md:px-20 pt-20"
     >
       <h2 className="text-[40px] sm:text-[48px] md:text-[64px] font-normal mb-6 md:mb-10 text-right">
         My Journey
@@ -82,19 +82,31 @@ function Journey() {
               key={i}
               className="relative w-full flex items-center min-h-[250px] mb-16 md:mb-24"
             >
-              {/* LEFT SIDE: Hidden on mobile, shows even items on desktop */}
               <div className="hidden md:flex w-1/2 justify-end">
                 {isEven && <ExperienceCard exp={exp} align="right" />}
               </div>
 
-              {/* THE DOT: Anchored left on mobile, center on desktop */}
               <div className="absolute left-4 md:left-1/2 -translate-x-1/2 z-20">
-                <div className="w-3 h-3 md:w-4 md:h-4 bg-[#1E1E1E] border-2 border-zinc-700 rounded-full" />
+                <div className="w-3 h-3 md:w-4 md:h-4" />
+                 <span
+                  className="
+                  absolute
+                  top-[-30%]
+                  w-4
+                  h-4
+                  rounded-full
+                  bg-[#181818]
+                  border-2
+                  border-lime-400
+                  shadow-[0_0_10px_#C7F000]
+                  z-10
+                "
+                >
+                  <span className="absolute inset-1 rounded-full bg-lime-400" />
+                </span>
               </div>
 
-              {/* RIGHT SIDE: Full width on mobile, half on desktop */}
               <div className="w-full md:w-1/2 flex justify-start pl-12 md:pl-16">
-                {/* On mobile: Show ALL items. On desktop: Show only odd items */}
                 <div className="block md:hidden">
                   <ExperienceCard exp={exp} align="left" />
                 </div>
@@ -135,11 +147,11 @@ function ExperienceCard({ exp, align }) {
           {exp.company}
         </h3>
       </a>
-      <p className="text-xl md:text-2xl text-zinc-200 mb-2 hover:text-lime-400 transition-colors">{exp.role}</p>
-      <p className="text-zinc-500 max-w-sm leading-relaxed mb-4 text-sm md:text-base hover:text-lime-400 transition-colors">
+      <p className="text-xl md:text-2xl text-zinc-200 mb-2 text-lime-400 transition-colors">{exp.role}</p>
+      <p className="text-white max-w-sm leading-relaxed mb-4 text-sm md:text-base hover:text-lime-400 transition-colors">
         {exp.description}
       </p>
-      <span className="text-xs md:text-sm text-zinc-500 font-mono bg-zinc-800/50 px-2 py-1 rounded hover:text-lime-400 transition-colors">
+      <span className="text-xs md:text-sm text-white font-mono bg-zinc-800/50 px-2 py-1 rounded hover:text-lime-400 transition-colors">
         {exp.period}
       </span>
     </motion.div>

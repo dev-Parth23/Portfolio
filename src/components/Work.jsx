@@ -1,7 +1,6 @@
 import React from "react";
 import { GoArrowDown } from "react-icons/go";
 import { FaLinkedin, FaWhatsapp, FaGithub, FaDownload  } from "react-icons/fa6";
-import { FaFileDownload } from 'react-icons/fa'; // Use a download icon instead
 
 function Work() {
   return (

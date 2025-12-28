@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import LocomotiveScroll from "locomotive-scroll";
+
 import Navbar from "./components/Navbar";
 import Work from "./components/Work";
 import Stripes from "./components/Stripes";
@@ -8,20 +9,51 @@ import Projects from "./components/Projects";
 import Journey from "./components/Journey";
 import Skills from "./components/Skills";
 import Education from "./components/Education";
+import Contact from "./components/Contact";
 
 function App() {
-  const locomotiveScroll = new LocomotiveScroll();
+  const scrollRef = useRef(null);
+
+  useEffect(() => {
+    const scroll = new LocomotiveScroll({
+      el: scrollRef.current,
+      smooth: true,
+      lerp: 0.08,
+      tablet: { smooth: true },
+      smartphone: { smooth: true },
+    });
+
+    // expose globally for navbar buttons
+    window.locoScroll = scroll;
+
+    // keep in sync
+    setTimeout(() => scroll.update(), 500);
+
+    return () => {
+      scroll.destroy();
+      window.locoScroll = null;
+    };
+  }, []);
+
   return (
-    <div className="overflow-x-hidden w-full bg-[#e7e7e7] text-black scale-100 select-none">
+    <>
       <Navbar />
-      <Work />
-      <Stripes />
-      <About />
-      <Projects />
-      <Journey />
-      <Skills />
-      <Education />
-    </div>
+
+      <div
+        ref={scrollRef}
+        data-scroll-container
+        className="overflow-hidden bg-[#e7e7e7] text-black select-none"
+      >
+        <Work />
+        <Stripes />
+        <About />
+        <Projects />
+        <Journey />
+        <Skills />
+        <Education />
+        <Contact />
+      </div>
+    </>
   );
 }
 

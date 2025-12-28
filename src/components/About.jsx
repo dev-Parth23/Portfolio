@@ -3,7 +3,7 @@ import React from "react";
 
 function About() {
   return (
-    <div id="about" className="relative w-full min-h-screen bg-[#1E1E1E] text-white overflow-hidden">
+    <div id="about"  data-scroll-section className="relative w-full min-h-screen bg-[#181818] text-white overflow-hidden">
       {/* INTRO */}
       <section className="px-6 sm:px-10 md:px-16 pt-20 max-w-[900px]">
         <h2 className="text-[40px] sm:text-[48px] md:text-[64px] font-normal mb-6 md:mb-10">
