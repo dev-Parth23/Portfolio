@@ -10,9 +10,6 @@ const videos = [
   "vid-5.webm",
   "vid-6.webm",
   "vid-7.webm",
-  "vid-8.webm",
-  "vid-9.webm",
-  "vid-10.webm",
 ];
 
 function Products() {
