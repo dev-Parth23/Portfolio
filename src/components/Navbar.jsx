@@ -31,13 +31,11 @@ function Navbar() {
       lastScrollY.current = currentScrollY;
     };
 
-    // Locomotive Scroll support
     if (window.locoScroll) {
       window.locoScroll.on("scroll", (obj) => {
         onScroll(obj.scroll.y);
       });
     } else {
-      // Fallback to native scroll
       const handleScroll = () => {
         onScroll(window.scrollY);
       };
@@ -52,8 +50,8 @@ function Navbar() {
         fixed top-0 left-0 z-50 w-full
         select-none
         bg-[#E6E6E6]/90
-        backdrop-blur-md
-        border-b border-zinc-300
+        backdrop-blur-sm
+        border-b border-zinc-500
         transition-transform duration-300 ease-out
         ${hidden ? "-translate-y-full" : "translate-y-0"}
       `}

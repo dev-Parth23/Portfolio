@@ -13,7 +13,8 @@ export default function Loader({ onComplete }) {
 
     tl.to(bricks, {
       yPercent: 100,
-      duration: 2.5,
+      duration: 3,
+      delay:1,
       ease: "power4.inOut",
       stagger: 0.06,
     });
