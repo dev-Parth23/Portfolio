@@ -3,21 +3,36 @@ import { GoArrowUpRight } from "react-icons/go";
 
 const Button = ({ title = "Contact", href = "#contact" }) => {
   const handleClick = (e) => {
+    if (href.startsWith("http")) {
+      return; 
+    }
     e.preventDefault();
+
     const id = href.replace("#", "");
     const el = document.getElementById(id);
-    const isLast = el && !el.nextElementSibling;
+    if (!el) return;
+
+    const isLast = !el.nextElementSibling;
     const offset = isLast ? 0 : -80;
 
-    if (window.locoScroll && typeof window.locoScroll.scrollTo === "function") {
-      window.locoScroll.scrollTo(href, { offset });
+    if (
+      window.locoScroll &&
+      typeof window.locoScroll.scrollTo === "function"
+    ) {
+      window.locoScroll.scrollTo(el, { offset });
     } else {
-      el?.scrollIntoView({ behavior: "smooth" });
+      el.scrollIntoView({ behavior: "smooth" });
     }
   };
 
   return (
-    <a href={href} onClick={handleClick} className="group flex items-center">
+    <a
+      href={href}
+      onClick={handleClick}
+      target={href.startsWith("http") ? "_blank" : undefined}
+      rel={href.startsWith("http") ? "noopener noreferrer" : undefined}
+      className="group flex items-center"
+    >
       <span
         className="
           flex items-center px-5 py-2

@@ -65,7 +65,7 @@ function Navbar() {
           className="hover:opacity-60"
           onClick={(e) => handleNavClick(e, "home")}
         >
-          <span className="text-2xl sm:text-3xl lg:text-4xl font-semibold tracking-tight">
+          <span className="text-2xl sm:text-3xl text-black lg:text-4xl font-semibold tracking-tight">
             PS
           </span>
         </a>
