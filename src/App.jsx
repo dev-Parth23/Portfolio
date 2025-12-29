@@ -12,6 +12,7 @@ import Skills from "./components/Skills";
 import Education from "./components/Education";
 import Contact from "./components/Contact";
 import ChatbotLauncher from "./components/ChatbotLauncher";
+import CustomCursor from "./components/CustomCursor";
 
 function App() {
   const scrollRef = useRef(null);
@@ -38,6 +39,7 @@ function App() {
   return (
     <div className="select-none">
       {loading && <Loader onComplete={() => setLoading(false)} />}
+        <CustomCursor />
       <Navbar />
 
 <ChatbotLauncher />

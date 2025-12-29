@@ -1,10 +1,26 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-*{
-    box-sizing: border-box;
-    font-family: 'Inter', sans-serif;
+
+* {
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
 }
-::-webkit-scrollbar{
-    display: none;
+
+html,
+body {
+  background-color: black;
+  color: white;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+.custom-cursor {
+  position: fixed;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 999999;
+  transform: translate(-50%, -50%);
 }
