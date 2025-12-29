@@ -36,7 +36,7 @@ function App() {
   }, []);
 
   return (
-    <>
+    <div className="select-none">
       {loading && <Loader onComplete={() => setLoading(false)} />}
       <Navbar />
 
@@ -56,7 +56,7 @@ function App() {
         <Education />
         <Contact />
       </div>
-    </>
+    </div>
   );
 }
 
