@@ -36,15 +36,19 @@ const Contact = () => {
     setLoading(true);
 
     try {
+      // email to parthsinghal23.cs@gmail.com
       await emailjs.send(
-        "service_85a10uq",
-        "template_15yan3d",
-        {
-          name: formData.name,
-          email: formData.email,
-          phone: formData.phone,
-          message: formData.message,
-        },
+        "Portfolio",
+        "Portfolio-notification",
+        formData,
+        "uvLUWEICCX5CUYrZ4"
+      );
+
+      // email to the viewer
+      await emailjs.send(
+        "Portfolio",
+        "viewer-notification",
+        formData,
         "uvLUWEICCX5CUYrZ4"
       );
 
