@@ -27,7 +27,6 @@ function Products() {
       description1: "Interactive portfolio with smooth animations, automated contact form with email integration, and custom ChatGPT assistant for enhanced user engagement.",
       description2: "React • Tailwind CSS • GSAP • Framer Motion • ChatGPT API • Email Integration",
       live: true,
-      live: true,
       color: "hover:bg-red-700",
       link:"https://github.com/dev-Parth23/Parth_Singhal",
     },

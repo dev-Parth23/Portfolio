@@ -129,7 +129,7 @@ export default function ChatbotPopup({ onClose }) {
       `}</style>
       
       <div className="fixed inset-0 z-[9999] bg-black/60 backdrop-blur-sm flex items-end sm:items-center justify-center sm:justify-end sm:p-6">
-      <div className="w-full h-[80vh] sm:h-[600px] sm:w-[400px] bg-[#0f0f0f] border-t sm:border border-white/10 rounded-t-2xl sm:rounded-2xl shadow-2xl flex flex-col overflow-hidden">
+      <div className="w-full h-[90vh] sm:h-[720px] sm:w-[400px] bg-[#0f0f0f] border-t sm:border border-white/10 rounded-t-2xl sm:rounded-2xl shadow-2xl flex flex-col overflow-hidden">
         <div className="flex items-center justify-between px-4 py-3 border-b border-white/10 bg-[#0f0f0f] z-10">
           <div className="flex items-center gap-3 text-white">
             <img src="/Buddy.png" alt="Buddy" className="w-10 h-10 rounded-full bg-white/10 p-1" />
