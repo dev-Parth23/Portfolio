@@ -1,4 +1,8 @@
 import { useEffect, useState, useRef } from "react";
+import { useEffect } from "react";
+import api from "../services/api";
+
+
 const formatAIResponse = (text) => {
   if (!text) return text;
   
@@ -9,9 +13,15 @@ const formatAIResponse = (text) => {
     .replace(/\n- /g, '\n• ') 
     .replace(/\n\d+\. /g, '\n$&')
     .trim();
-};
-
-export default function ChatbotPopup({ onClose }) {
+  };
+  
+  export default function ChatbotPopup({ onClose }) {
+  
+    useEffect(() => {
+      api.get("/")
+        .then(res => console.log(res.data))
+        .catch(err => console.error(err));
+    }, []);
   const [messages, setMessages] = useState([
     { id: 1, text: "Hi, I'm Buddy 👋\nParth's AI assistant.\nAsk me about projects, skills, or experience.", sender: "bot" }
   ]);
