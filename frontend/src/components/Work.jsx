@@ -53,7 +53,7 @@ function Work() {
           text-black
         "
       >
-        <a href="/RESUME.pdf" download>
+        <a href="/ParthSinghal_Resume.pdf" download>
           <FaDownload />
         </a>
 
