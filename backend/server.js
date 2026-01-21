@@ -16,6 +16,11 @@ const model = genAI.getGenerativeModel({ model: "gemini-2.5-flash" });
 
 const PORTFOLIO_DATA = require("./data");
 
+app.get("/", (req, res) => {
+  res.send("Backend running");
+});
+
+
 app.post("/chat", async (req, res) => {
   try {
     const { message } = req.body;
